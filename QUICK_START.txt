@@ -1,0 +1,55 @@
+╔══════════════════════════════════════════════════════════════╗
+║                  🚀 VERCEL DEPLOYMENT                        ║
+║              Focus Todo App - Snelstart                      ║
+╚══════════════════════════════════════════════════════════════╝
+
+📦 JE HEBT ONTVANGEN:
+└── focus-todo-app/          (Complete app bestanden)
+└── DEPLOYMENT_GUIDE.md      (Gedetailleerde uitleg)
+└── QUICK_START.txt          (Dit bestand)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 SNELSTE WEG (3 STAPPEN):
+
+1️⃣  MAAK GITHUB ACCOUNT
+    → Ga naar github.com
+    → Klik "Sign up"
+    → Volg de stappen
+
+2️⃣  MAAK NIEUWE REPOSITORY
+    → Klik "+" rechtsboven in GitHub
+    → Kies "New repository"
+    → Naam: focus-todo-app
+    → Klik "Create repository"
+    → Sleep ALLE bestanden uit de focus-todo-app map naar GitHub
+    → Klik "Commit changes"
+
+3️⃣  DEPLOY NAAR VERCEL
+    → In Vercel: klik "Continue with GitHub"
+    → Selecteer je focus-todo-app repository
+    → Klik "Deploy"
+    → KLAAR! Je krijgt een URL
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📱 OP IPHONE INSTALLEREN:
+
+1. Open je Vercel URL in Safari
+2. Tik op "Deel" icoon (□↑)
+3. "Zet op beginscherm"
+4. Klaar! App staat op je home screen
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💻 OP LAPTOP:
+Gewoon de URL openen in je browser!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📚 MEER INFO:
+Lees DEPLOYMENT_GUIDE.md voor gedetailleerde uitleg
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎉 VEEL SUCCES!

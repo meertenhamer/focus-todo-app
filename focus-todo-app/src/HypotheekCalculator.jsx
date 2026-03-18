@@ -732,17 +732,15 @@ const ScenarioVergelijking = ({ scenarios }) => {
 
 // ─── Hoofd component ──────────────────────────────────────────────────────────
 
-const HypotheekCalculator = ({ onSluiten }) => {
+const HypotheekCalculator = () => {
   const [scenarios, setScenarios] = useState([defaultScenario(1)]);
   const [toonResultatenInEditor, setToonResultatenInEditor] = useState(true);
-  const [activeTab, setActiveTab] = useState('invoer');
 
   let scenarioTeller = scenarios.length;
 
   const voegScenarioToe = () => {
     scenarioTeller += 1;
     const nieuwScenario = defaultScenario(scenarioTeller);
-    // kopieer eerste deel als basis
     if (scenarios.length > 0) {
       nieuwScenario.belastingschijf = scenarios[scenarios.length - 1].belastingschijf;
     }
@@ -768,9 +766,9 @@ const HypotheekCalculator = ({ onSluiten }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex flex-col bg-gray-100">
+    <div className="min-h-screen bg-gray-100">
       {/* Topbalk */}
-      <div className="bg-white border-b border-gray-200 px-5 py-3 flex items-center justify-between shadow-sm flex-shrink-0">
+      <div className="bg-white border-b border-gray-200 px-5 py-3 flex items-center justify-between shadow-sm">
         <div className="flex items-center gap-3">
           <div className="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center shadow">
             <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -782,28 +780,19 @@ const HypotheekCalculator = ({ onSluiten }) => {
             <p className="text-xs text-gray-400">Bruto/netto lasten per scenario</p>
           </div>
         </div>
-        <div className="flex items-center gap-2">
-          <label className="flex items-center gap-2 text-xs text-gray-600 cursor-pointer select-none">
-            <div
-              onClick={() => setToonResultatenInEditor(!toonResultatenInEditor)}
-              className={`w-8 h-4 rounded-full transition-colors relative cursor-pointer ${toonResultatenInEditor ? 'bg-blue-600' : 'bg-gray-300'}`}
-            >
-              <div className={`absolute top-0.5 w-3 h-3 rounded-full bg-white shadow transition-transform ${toonResultatenInEditor ? 'translate-x-4' : 'translate-x-0.5'}`} />
-            </div>
-            Resultaten naast invoer
-          </label>
-          <button
-            onClick={onSluiten}
-            className="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transition-colors"
+        <label className="flex items-center gap-2 text-xs text-gray-600 cursor-pointer select-none">
+          <div
+            onClick={() => setToonResultatenInEditor(!toonResultatenInEditor)}
+            className={`w-8 h-4 rounded-full transition-colors relative cursor-pointer ${toonResultatenInEditor ? 'bg-blue-600' : 'bg-gray-300'}`}
           >
-            <X size={18} />
-          </button>
-        </div>
+            <div className={`absolute top-0.5 w-3 h-3 rounded-full bg-white shadow transition-transform ${toonResultatenInEditor ? 'translate-x-4' : 'translate-x-0.5'}`} />
+          </div>
+          Resultaten naast invoer
+        </label>
       </div>
 
       {/* Content */}
-      <div className="flex-1 overflow-y-auto">
-        <div className="max-w-5xl mx-auto px-4 py-6 space-y-6">
+      <div className="max-w-5xl mx-auto px-4 py-6 space-y-6">
           {/* Scenarios */}
           <div className="space-y-4">
             {scenarios.map((scenario, i) => (
@@ -845,7 +834,6 @@ const HypotheekCalculator = ({ onSluiten }) => {
             <strong>Let op:</strong> Deze berekeningen zijn indicatief. De werkelijke hypotheekrente aftrek wordt begrensd door de wet Hillen en andere fiscale regelgeving. Raadpleeg een hypotheekadviseur voor bindend advies.
           </div>
         </div>
-      </div>
     </div>
   );
 };

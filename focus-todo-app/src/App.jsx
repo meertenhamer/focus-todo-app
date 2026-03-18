@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Plus, Circle, CheckCircle2, Calendar, Clock, Focus, Settings, Home, Briefcase, Flower2, Sun, Filter, Tag, X, AlertCircle, ChevronDown, ChevronRight, Folder, List, Trash2, Edit2, MoreVertical, GripVertical, ChevronUp } from 'lucide-react';
+import HypotheekCalculator from './HypotheekCalculator';
 
 const TodoApp = () => {
+  const [toonHypotheekCalculator, setToonHypotheekCalculator] = useState(false);
   const [activeView, setActiveView] = useState('vandaag');
   const [activeWorkspace, setActiveWorkspace] = useState('persoonlijk');
   const [activeProject, setActiveProject] = useState(null);
@@ -1024,6 +1026,7 @@ const TodoApp = () => {
   };
 
   return (
+    <>
     <div style={{
       minHeight: '100vh',
       background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)',
@@ -1281,6 +1284,32 @@ const TodoApp = () => {
             >
               <Sun size={20} />
               Vandaag
+            </button>
+
+            <button
+              onClick={() => setToonHypotheekCalculator(true)}
+              className="workspace-btn"
+              style={{
+                background: 'rgba(255,255,255,0.05)',
+                border: 'none',
+                padding: '16px 20px',
+                borderRadius: '12px',
+                color: 'white',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px',
+                fontSize: '15px',
+                fontWeight: '400',
+                fontFamily: "'Work Sans', sans-serif",
+                cursor: 'pointer',
+                width: '100%',
+                textAlign: 'left',
+              }}
+            >
+              <svg style={{width:'20px',height:'20px',flexShrink:0}} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+              Hypotheek Calculator
             </button>
           </div>
 
@@ -2222,6 +2251,11 @@ const TodoApp = () => {
         </div>
       </div>
     </div>
+
+    {toonHypotheekCalculator && (
+      <HypotheekCalculator onSluiten={() => setToonHypotheekCalculator(false)} />
+    )}
+    </>
   );
 };
 
